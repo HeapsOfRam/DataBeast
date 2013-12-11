@@ -1,8 +1,13 @@
 Databeast::Application.routes.draw do
-  get "pages/home"
-  get "pages/help"
-  get "pages/about"
-  get "pages/store"
+  get "users/new"
+
+  root 'pages#home'
+  match '/help',    to: 'pages#help',    via: 'get'
+  match '/about',   to: 'pages#about',   via: 'get'
+  match '/store',   to: 'pages#store',   via: 'get'
+  match '/contact', to: 'pages#contact', via: 'get'
+
+  match '/signup',  to: 'users#new',     via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

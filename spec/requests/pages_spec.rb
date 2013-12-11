@@ -3,56 +3,41 @@ require 'spec_helper'
 describe "Pages" do
 
 	let(:base_title) { "DataBEAST" }
+	subject { page }
 
 	describe "Home page" do
-		before { visit '/pages/home' }
+		before { visit root_path }
 
-		it "should have the base title" do
-			expect(page).to have_title("#{base_title}")
-		end
-
-		it "should not have a custom page title" do
-			expect(page).not_to have_title("Home")
-		end
-
-		it "should have the content 'Home'" do
-			expect(page).to have_content('DataBEAST')
-		end
+		it { should have_title(full_title('')) }
+		it { should_not have_title("Home") }
+		it { should have_content("DataBEAST") }
 	end
 
 	describe "Help page" do
-		before { visit '/pages/help' }
+		before { visit help_path }
 
-		it "should have the proper title" do
-			expect(page).to have_title("#{base_title} | Help")
-		end
-
-		it "should have the content 'Help'" do
-			expect(page).to have_content('Help')
-		end
+		it { should have_title(full_title('Help')) }
+		it { should have_content("Help") }
 	end
 
 	describe "About page" do
-		before { visit '/pages/about' }
+		before { visit about_path }
 
-		it "should have the proper title" do
-			expect(page).to have_title("#{base_title} | About")
-		end
-
-		it "should have the content 'About'" do
-			expect(page).to have_content('About')
-		end
+		it { should have_title(full_title("About")) }
+		it { should have_content("About") }
 	end
 
 	describe "Store page" do
-		before { visit '/pages/store' }
-		
-		it "should have the proper title" do
-			expect(page).to have_title("#{base_title} | Store")
-		end
+		before { visit store_path }
 
-		it "should have the content 'Store'" do
-			expect(page).to have_content('Store')
-		end
+		it { should have_title(full_title("Store")) }
+		it { should have_content("Store") }
+	end
+
+	describe "Contact page" do
+		before { visit contact_path }
+
+		it { should have_title(full_title("Contact")) }
+		it { should have_content("Contact") }
 	end
 end

@@ -10,4 +10,7 @@ class PagesController < ApplicationController
 
 	def store
 	end
+
+	def contact
+	end
 end
