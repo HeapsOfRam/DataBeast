@@ -7,8 +7,12 @@ describe "Pages" do
 	describe "Home page" do
 		before { visit '/pages/home' }
 
-		it "should have the proper title" do
-			expect(page).to have_title("#{base_title} | Home")
+		it "should have the base title" do
+			expect(page).to have_title("#{base_title}")
+		end
+
+		it "should not have a custom page title" do
+			expect(page).not_to have_title("Home")
 		end
 
 		it "should have the content 'Home'" do
