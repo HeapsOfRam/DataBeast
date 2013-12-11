@@ -24,4 +24,4 @@ def secure_token
 	end
 end
 
-Starcats::Application.config.secret_key_base = secure_token
+Databeast::Application.config.secret_key_base = secure_token
