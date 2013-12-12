@@ -14,4 +14,6 @@
 	</aside>
 </div>
 
+<%= link_to "Edit", edit_card_path(@card), class: "btn btn-large btn-primay" %>
+
 <%= link_to "Delete", @card, method: :delete, data: { confirm: "You sure?" }, class: "btn btn-large btn-primary" %>
