@@ -1,0 +1,17 @@
+<% provide(:title, @card.name) %>
+<div class="row">
+	<aside class="span4">
+		<section>
+			<h1>
+				<%= @card.name %>
+			</h1>
+			<ul>
+				<li>PRICE: <%= @card.price %></li>
+				<li>POWER LEVEL: <%= @card.power_level %></li>
+				<li>HEALTH LEVEL: <%= @card.health_level %></li>
+			</ul>
+		</section>
+	</aside>
+</div>
+
+<%= link_to "Delete", @card, method: :delete, data: { confirm: "You sure?" }, class: "btn btn-large btn-primary" %>

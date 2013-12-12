@@ -1,0 +1,23 @@
+<% provide(:title, 'Edit a card') %>
+<h1>Edit a DataBEAST</h1>
+
+<div class="row">
+	<div class="span6 offset3">
+		<%= form_for(@card) do |f| %>
+
+			<%= f.label :name %>
+			<%= f.text_field :name, :default => @card.name %>
+
+			<%= f.label :price %>
+			<%= f.text_field :price %>
+
+			<%= f.label :power_level %>
+			<%= f.text_field :power_level %>
+
+			<%= f.label :health_level %>
+			<%= f.text_field :health_level %>
+
+			<%= f.submit "Fix this BEAST", class: "btn btn-large btn-primary" %>
+		<% end %>
+	</div>
+</div>

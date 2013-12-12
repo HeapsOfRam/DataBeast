@@ -1,0 +1,24 @@
+<% provide(:title, 'Create a card') %>
+<h1>Create a New DataBEAST</h1>
+
+<div class="row">
+	<div class="span6 offset3">
+		<%= form_for(@card) do |f| %>
+			<%= render 'shared/error_messages', entity: @card %>
+
+			<%= f.label :name %>
+			<%= f.text_field :name %>
+
+			<%= f.label :price %>
+			<%= f.text_field :price %>
+
+			<%= f.label :power_level %>
+			<%= f.text_field :power_level %>
+
+			<%= f.label :health_level %>
+			<%= f.text_field :health_level %>
+
+			<%= f.submit "Create this BEAST", class: "btn btn-large btn-primary" %>
+		<% end %>
+	</div>
+</div>

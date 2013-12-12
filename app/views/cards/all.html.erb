@@ -1,0 +1,12 @@
+<% provide(:title, "All Cards") %>
+<div class="cards">
+	<h1>All Cards</h1>
+	<% Card.all.each do |card| %>
+		<h3><%= link_to card.name, card %></h3>
+		<h4>PRICE: <%= card.price %><br>
+		POWER LEVEL: <%= card.power_level %><br>
+		HEALTH LEVEL: <%= card.health_level %><br></h4>
+	<% end %>
+</div>
+
+<%= link_to "Create a new card", new_card_path, class: 'btn btn-large btn-primary' %>
