@@ -15,13 +15,13 @@ class CardsController < ApplicationController
 
   def show
     if(params[:id] == "all")
-      all
+      index
     else
       @card = Card.find(params[:id])
     end
   end
 
-  def all
+  def index
     render "all"
   end
 
