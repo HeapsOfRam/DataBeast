@@ -22,7 +22,7 @@ class CardsController < ApplicationController
   end
 
   def index
-    render "all"
+    @cards = Card.paginate(page: params[:page])
   end
 
   def update

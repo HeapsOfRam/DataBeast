@@ -1,0 +1,9 @@
+<% provide(:title, "All Cards") %>
+<div class="search">
+	
+</div>
+<ul class="cards">
+	<%= render @cards %>
+</ul>
+
+<%= link_to "Create a new card", new_card_path, class: 'btn btn-large btn-primary' %>
