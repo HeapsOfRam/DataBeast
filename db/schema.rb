@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131213153418) do
+ActiveRecord::Schema.define(version: 20131213155226) do
 
   create_table "cards", force: true do |t|
     t.string   "name"
-    t.string   "price"
-    t.string   "power_level"
-    t.string   "health_level"
+    t.integer  "price"
+    t.integer  "power_level"
+    t.integer  "health_level"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

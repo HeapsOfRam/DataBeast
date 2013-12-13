@@ -4,9 +4,9 @@ class ChangeAllToStrings < ActiveRecord::Migration
 
   	create_table :cards do |t|
       t.string :name
-      t.integer :price
-      t.integer :power_level
-      t.integer :health_level
+      t.string :price
+      t.string :power_level
+      t.string :health_level
 
       t.timestamps
     end
