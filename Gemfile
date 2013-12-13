@@ -10,9 +10,9 @@ gem 'bootstrap-will_paginate', '0.0.9'
 #gem 'searchlogic'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', '1.3.8'
 
 group :development do
+	gem 'sqlite3', '1.3.8'
 	gem 'rspec-rails', '2.13.1'
 end
 
