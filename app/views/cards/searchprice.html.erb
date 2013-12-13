@@ -1,0 +1,32 @@
+<% provide(:title, "All Cards") %>
+<div class="search">
+	<%= check_box_tag(:card_name) %>
+	<%= label_tag(:card_name, "Name") %>
+	<%= check_box_tag(:card_price) %>
+	<%= label_tag(:card_price, "Price") %>
+	<%= check_box_tag(:card_power_level) %>
+	<%= label_tag(:card_power_level, "Power Level") %>
+	<%= check_box_tag(:card_health_level) %>
+	<%= label_tag(:card_health_level, "Health Level") %> 
+</div>
+
+<%= form_tag("/searchname", method: "get") do %>
+	<%= label_tag(:q, "Name Search:") %>
+	<%= text_field_tag :name_search, params[:search] %>
+	<%= submit_tag("Search", class: 'btn btn-large btn-primary') %>
+<% end %>
+
+<%= form_tag("/searchprice", method: "get") do %>
+	<%= label_tag(:q, "Price Search:") %>
+	<%= text_field_tag :price_search, params[:search] %>
+	<%= submit_tag("Search", class: 'btn btn-large btn-primary') %>
+<% end %>
+
+<%= link_to "Back to all", cards_path, class: 'btn btn-large btn-primary' %>
+
+
+<ul class="cards">
+	<%= render @cards %>
+</ul>
+
+<%= link_to "Create a new card", new_card_path, class: 'btn btn-large btn-primary' %>

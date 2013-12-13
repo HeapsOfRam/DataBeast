@@ -18,6 +18,7 @@ Databeast::Application.routes.draw do
   match '/newcard',    to: 'card#new',       via: 'get'
   match '/updatecard', to: 'card#update',    via: 'post'
   match '/destroycard', to: 'card#destroy',   via: 'delete'
+  match '/search',  to: 'cards#search',   via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

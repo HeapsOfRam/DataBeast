@@ -1,5 +1,4 @@
-<% provide(:title, "All Cards") %>
-<div class="search">
+<% provide(:title, "Search") %>
 
 <%= form_tag cards_path, :method => 'get' do %>
 	<%= text_field_tag :search, params[:search] %>
@@ -11,16 +10,7 @@
 	<%= submit_tag "Search Price", :price => nil, class: 'btn btn-large btn-primary'%>
 <% end %>
 
-<%= form_tag cards_path, :method => 'get' do %>
-	<%= text_field_tag :search, params[:search] %>
-	<%= submit_tag("Search Power Level", :power_level => nil, class: 'btn btn-large btn primary') %>
-<% end %>
-
-<%= form_tag cards_path, :method => 'get' do %>
-	<%= text_field_tag :search, params[:search] %>
-	<%= submit_tag("Search Health Level", :health_level => nil, class: 'btn btn-large btn primary') %>
-<% end %>
-</div>
+<%= link_to "Back to all", cards_path, class: 'btn btn-large btn-primary' %>
 
 <ul class="cards">
 	<%= render @cards %>

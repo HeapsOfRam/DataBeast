@@ -3,6 +3,10 @@ class CardsController < ApplicationController
   	@card = Card.new
   end
 
+  def search
+    @cards = Card.search(params[:search])
+  end
+
   def create
   	@card = Card.new(card_params)
   	if @card.save
@@ -22,7 +26,8 @@ class CardsController < ApplicationController
   end
 
   def index
-    @cards = Card.paginate(page: params[:page])
+    #@cards = Card.paginate(page: params[:page])
+    @cards = Card.search(params[:search])
   end
 
   def update
